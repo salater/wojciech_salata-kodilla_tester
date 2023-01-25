@@ -17,16 +17,17 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Driver driver = new Driver(5000, "drive the car");
-        Footballer footballer = new Footballer(14000, "Play the game");
-        Doctor doctor = new Doctor(14000, "Treat the people");
-        Informatic informatic = new Informatic(24500, "install Operating system");
+        Driver driver = new Driver(5000, "drive the car", "driver");
+        Footballer footballer = new Footballer(14000, "Play the game", "footballer");
+        Doctor doctor = new Doctor(14000, "Treat the people", "doctor");
+        Informatic informatic = new Informatic(24500, "install Operating system", "informatic");
 
-        Person person1 = new Person("Wojtek", 42, footballer);
-        //  Person person2 = new Person("Gienek", 36, "Footballer");
-        //  Person person3 = new Person("Marek", 65, "Doctor");
-        //  Person person4 = new Person("Karol", 18, "Informatic");
-        // System.out.println("Responsibilities of is: ");
+        Person person1 = new Person(" Wojtek ", 42, footballer);
+        System.out.println("Firts person is: "+ person1.firstName+ " he is a "+footballer);
+        Person person2 = new Person(" Gienek ", 36, driver);
+        Person person3 = new Person(" Marek ", 65, doctor);
+        Person person4 = new Person(" Karol ", 18, informatic);
+
     }
 }
 

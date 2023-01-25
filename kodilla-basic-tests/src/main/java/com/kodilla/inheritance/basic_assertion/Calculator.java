@@ -1,4 +1,4 @@
-package com.kodilla.basic_assertion;
+package com.kodilla.inheritance.basic_assertion;
 
 public class Calculator {
 
