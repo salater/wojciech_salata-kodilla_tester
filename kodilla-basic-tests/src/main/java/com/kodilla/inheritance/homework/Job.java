@@ -13,5 +13,7 @@ public abstract class Job {
 
     }
 
-
+    public String getNameOfJob() {
+        return nameOfJob;
+    }
 }
