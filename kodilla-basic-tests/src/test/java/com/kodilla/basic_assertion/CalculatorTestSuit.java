@@ -27,12 +27,14 @@ public class CalculatorTestSuit {
 @Test
     public void testPower() {
         Calculator calculatorP = new Calculator();
-        double a = -2.0;
+        double a = -9.0;
         double b = -1.0;
         double delta =0.01;
         double powResult = calculatorP.power(a, b);
-        assertEquals(-0.5, powResult, delta);
-
+      //  assertEquals(-0.5, powResult, delta);
+assertEquals(-0.11, powResult, delta);
 }
+
+
 
 }

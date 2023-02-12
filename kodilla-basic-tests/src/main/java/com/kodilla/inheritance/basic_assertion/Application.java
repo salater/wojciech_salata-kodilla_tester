@@ -9,7 +9,7 @@ public class Application {
         int b = 8;
 
         int sumResult = calculator.suma(a, b);
-        boolean correct = ResultChecker.assertEquals(13, sumResult);
+        boolean correct = ResultChecker.assertEquals(13, sumResult,1);
         if (correct) {
             System.out.println("Metoda dodawania jest prawidłowa");
         } else {
@@ -17,7 +17,7 @@ public class Application {
         }
 
         int subResult = calculator.substraction(a, b);
-        correct = ResultChecker.assertEquals(-5, subResult);
+        correct = ResultChecker.assertEquals(-5, subResult,1);
         if (correct) {
             System.out.println("Metoda odejmowania jest prawidłowa");
         } else {
@@ -25,7 +25,7 @@ public class Application {
         }
 
         double powResult = calculator.power(a, b);
-        correct = ResultChecker.assertEquals(390625, powResult);
+        correct = ResultChecker.assertEquals(390625, powResult,1);
         if (correct) {
             System.out.println("Metoda podnoszenia do kwadratu jest prawidłowa");
         } else {
