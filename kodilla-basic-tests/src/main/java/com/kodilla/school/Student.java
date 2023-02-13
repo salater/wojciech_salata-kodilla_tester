@@ -17,40 +17,48 @@ public class Student {
     }
 
     public void addMathGrade(int grade) {
-        if(grade >0 && grade <7) {
+        if (grade > 0 && grade < 7) {
             this.maths.add(grade);
         }
     }
+
     public void addPhysicsGrade(int grade) {
-        if(grade >0 && grade <7) {
+        if (grade > 0 && grade < 7) {
             this.physics.add(grade);
         }
     }
+
     public void addGeografyGrade(int grade) {
-        if(grade >0 && grade <7) {
+        if (grade > 0 && grade < 7) {
             this.geografy.add(grade);
         }
     }
+
     public void addHistoryGrade(int grade) {
-        if(grade > 0 && grade <7) {
+        if (grade > 0 && grade < 7) {
             this.history.add(grade);
         }
     }
+
     public double getMathAverage() {
-        return  this.maths.getAverage();
+        return this.maths.getAverage();
     }
+
     public double getPhysicsAverage() {
         return this.physics.getAverage();
     }
+
     public double getGeografyAverage() {
         return this.geografy.getAverage();
     }
+
     public double getHistoryAverage() {
         return this.history.getAverage();
     }
-public double getAverage() {
+
+    public double getAverage() {
         double sum = this.geografy.getAverage() + this.history.getAverage() + this.physics.getAverage() + this.maths.getAverage();
-        return sum/4;
-    //return -1;
-}
+        return sum / 4;
+        //return -1;
+    }
 }
