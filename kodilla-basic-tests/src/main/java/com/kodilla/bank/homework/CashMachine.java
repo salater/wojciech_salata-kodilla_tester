@@ -11,6 +11,7 @@ public class CashMachine {
     int balanceCach;
     private int sizePayment;
     private int sizePaycheck;
+    double average;
 
 
     public CashMachine() {
@@ -66,5 +67,9 @@ public class CashMachine {
     }
     public int getSizePaycheck() {
         return sizePaycheck;
+    }
+    public double HowAverage(){
+        average = balance() / numberOfTransations;
+        return average;
     }
 }
