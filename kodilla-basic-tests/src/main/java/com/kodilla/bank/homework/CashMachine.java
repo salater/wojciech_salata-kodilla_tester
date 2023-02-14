@@ -12,15 +12,14 @@ public class CashMachine {
     private int sizePayment;
     private int sizePaycheck;
     double average;
+    String city;
 
-
-    public CashMachine() {
-       // this.size = 0;
+    public CashMachine(String city) {
+        this.city = city;
         this.transactionsPayment = new int[0]; // zerowa tablica
         this.transactionsPaycheck = new int[0]; // zerowa tablica
-        //tablica przyjmuje dodatnie i ujemne liczby wpłata lub wypłata
-    }
 
+    }
     public void addTransaction(int cash) {  // dodadanie wplaty/wyplaty z bankomatu
         if (cash == 0) {
             return;
@@ -58,18 +57,26 @@ public class CashMachine {
             return balanceCach;
     }
 
-    public int getNumberOfTransations() {
+    public int getNumberOfTransations() {             //zwraca licznik wszystkic transakcji
         return numberOfTransations;
     }
 
-    public int getSizePayment() {
+    public int getSizePayment() {                    // ilosc wpłat
         return sizePayment;
     }
-    public int getSizePaycheck() {
+    public int getSizePaycheck() {                   // ilosc wyplat
         return sizePaycheck;
     }
-    public double HowAverage(){
+    public double HowAverage(){                     // srednia watosci wplat
         average = balance() / numberOfTransations;
         return average;
+    }
+
+    public int[] getTransactionsPayment() {
+        return transactionsPayment;
+    }
+
+    public int[] getTransactionsPaycheck() {
+        return transactionsPaycheck;
     }
 }

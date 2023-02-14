@@ -43,22 +43,18 @@ public class Student {
     public double getMathAverage() {
         return this.maths.getAverage();
     }
-
     public double getPhysicsAverage() {
         return this.physics.getAverage();
     }
-
     public double getGeografyAverage() {
         return this.geografy.getAverage();
     }
-
     public double getHistoryAverage() {
         return this.history.getAverage();
     }
-
     public double getAverage() {
         double sum = this.geografy.getAverage() + this.history.getAverage() + this.physics.getAverage() + this.maths.getAverage();
         return sum / 4;
-        //return -1;
+
     }
 }

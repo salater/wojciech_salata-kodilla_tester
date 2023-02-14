@@ -7,15 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CashMAcineTestSuit {
     @Test
     public void checkAddTransaction() {
-        CashMachine cashMachine = new CashMachine();
+        CashMachine cashMachine = new CashMachine("Jawor");
 
-        CashMachine cashMachineLegnica = new CashMachine();
+        //CashMachine cashMachineLegnica = new CashMachine();
         cashMachine.addTransaction(200);
         cashMachine.addTransaction(500);
         cashMachine.addTransaction(-100);
         cashMachine.addTransaction(-0);
 
-        CashMachine cashMachineJawor = new CashMachine();
+        CashMachine cashMachineL = new CashMachine("Lenica");
         cashMachine.addTransaction(300);
         cashMachine.addTransaction(500);
         cashMachine.addTransaction(-800);
