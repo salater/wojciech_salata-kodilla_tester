@@ -22,7 +22,7 @@ public class CashMAcineTestSuit {
         cashMachine.addTransaction(-100);
         cashMachine.addTransaction(0);
 
-     //   CashMachine[] bankomat = {cashMachineJawor, cashMachineLegnica};
+
         assertEquals(7, cashMachine.getNumberOfTransations());      // spradza ilosc transakcji
         assertEquals(4, cashMachine.getSizePayment());              // sprawdza ilosc wplat
         assertEquals(3, cashMachine.getSizePaycheck());             // sprawdza ilosc wyplat
