@@ -1,9 +1,9 @@
 package com.kodilla.collections.interfaces;
 
-public class Square implements Shape{
+public class Square implements Shape {
     private double width;
 
-    public Square(double width){
+    public Square(double width) {
         this.width = width;
     }
 
