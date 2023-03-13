@@ -6,11 +6,10 @@ public class Opel implements Car {
     private int numberOfDoors;
     int speed = 0;
 
-    public Opel(int maxspeed, int engine, int numberOfDoors, int speed) {
+    public Opel(int maxspeed, int engine, int numberOfDoors) {
         this.maxspeed = maxspeed;
         this.engine = engine;
         this.numberOfDoors = numberOfDoors;
-        this.speed = speed;
 
     }
 

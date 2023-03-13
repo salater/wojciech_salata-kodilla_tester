@@ -4,13 +4,12 @@ public class Ford implements Car{
     private int maxspeed;
     private int engine;
     private int numberOfDoors;
-    private  int speed;
+    private  int speed=0;
 
-    public Ford(int maxspeed, int engine, int numberOfDoors, int speed) {
+    public Ford(int maxspeed, int engine, int numberOfDoors) {
         this.maxspeed = maxspeed;
         this.engine = engine;
         this.numberOfDoors = numberOfDoors;
-        this.speed = speed;
 
     }
     @Override
