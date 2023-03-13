@@ -1,7 +1,7 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    private int size;
+   //private int size;
     private CashMachine[] listCashMashin;
 
     public Bank(CashMachine[] cashMachines) {
@@ -35,9 +35,14 @@ public class Bank {
     }
 
     public int allNumberTransations() {
-        CashMachine cashMAchineQuantiti = new CashMachine("Quantitit");
-        int allQuantiti = cashMAchineQuantiti.getNumberOfTransations();
-        return allQuantiti;
+        CashMachine cashMachineall = new CashMachine("All");
+        int allTransaction = cashMachineall.getNumberOfTransations();
+        return allTransaction;
+    }
+
+        //CashMachine cashMAchineQuantiti = new CashMachine("Quantitit");
+       // int allQuantiti = cashMAchineQuantiti.getNumberOfTransations();
+       // return allQuantiti;
 
 
         /*
@@ -52,5 +57,5 @@ public class Bank {
     }  */
 
     }
-}
+
 

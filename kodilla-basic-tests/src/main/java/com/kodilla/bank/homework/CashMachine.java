@@ -53,7 +53,7 @@ public class CashMachine {
     }
 
     public int balance() {                  //  saldo bankomatu
-        int balanceCach = IntStream.of(transactionsPaycheck).sum() + IntStream.of(transactionsPayment).sum();
+        balanceCach = IntStream.of(transactionsPaycheck).sum() + IntStream.of(transactionsPayment).sum();
             return balanceCach;
     }
     public int getNumberOfTransations() {   // ilość transakcji
