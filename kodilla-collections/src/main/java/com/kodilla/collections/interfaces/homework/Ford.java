@@ -22,4 +22,8 @@ public class Ford implements Car{
     public void decreaseSpeed() {
         speed = speed - 30;
     }
+
+    public int getSpeed(){
+        return speed;
+    }
 }
