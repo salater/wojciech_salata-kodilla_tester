@@ -23,7 +23,7 @@ public class CarUtils {
         else
             return "Unknown Car name";
     }
-    public static void getIncreaspeed() {
+    public static void getInfoCar() {
         Car autospeed = new Car() {
             @Override
             public int getSpeed() {
