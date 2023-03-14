@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class BankTestSuite {
     @Test
-    void shoudReturnSumAllTransations() {
+    void shoudReturnSumAllCash() {          //sprawdz ile bylo wszytskich pieniedzy
         // given
         CashMachine cashMachine = new CashMachine("Jaw");
         cashMachine.addTransaction(800);
@@ -19,10 +19,13 @@ public class BankTestSuite {
         double sum = bank.sumOfCashFromMachines();
         // then
         Assertions.assertEquals(50, sum);
+        System.out.println("---------------------------------");
+        System.out.println("sum cash from all cashmachines: " + sum);
+        System.out.println("---------------------------------");
     }
 
     @Test
-    void shoudReturnSumAllPayment() {
+    void shoudReturnSumAlltransPayment() {
         // given
         CashMachine cashMachine = new CashMachine("Jaw");
         cashMachine.addTransaction(800);
@@ -33,42 +36,72 @@ public class BankTestSuite {
         CashMachine[] listMachines = {cashMachine, cashMachine2};
         Bank bank = new Bank(listMachines);
         // when
-        double sum = bank.sumOfCashFromMachines();
+        int sum = bank.sumAllTransPayment();
         // then
-        Assertions.assertEquals(50, sum);
-        System.out.println("suma z bankomatow: " +bank.sumOfCashFromMachines());
+        Assertions.assertEquals(2, sum);
+        System.out.println("---------------------------------");
+        System.out.println("number of transaction payment: " + sum);
+        System.out.println("---------------------------------");
     }
 
     @Test
-    void ShoudReturnAllNumebrOfTransations() {
+    void shoudReturnSumAllTransPaycheck() {
+        // given
         CashMachine cashMachine = new CashMachine("Jaw");
-        cashMachine.addTransaction(400);
-        cashMachine.addTransaction(400);
-        cashMachine.addTransaction(400);
-        cashMachine.addTransaction(400);
-      //  CashMachine cashMachine2 = new CashMachine("Leg");
-      //  cashMachine2.addTransaction(-200);
-        CashMachine[] listMachines = {cashMachine};
+        cashMachine.addTransaction(800);
+        cashMachine.addTransaction(-700);
+        CashMachine cashMachine2 = new CashMachine("Leg");
+        cashMachine.addTransaction(-400);
+        cashMachine.addTransaction(-100);
+        cashMachine.addTransaction(350);
+        CashMachine[] listMachines = {cashMachine, cashMachine2};
         Bank bank = new Bank(listMachines);
-        int allTransations = bank.allNumberTransations();
-        Assertions.assertEquals(4, allTransations);
-        System.out.println("ilosc transakcji: " + bank.allNumberTransations());
+        // when
+        int sum = bank.sumAllTransPaychack();
+        // then
+        Assertions.assertEquals(3, sum);
+        System.out.println("---------------------------------");
+        System.out.println("number transactions paychack: " + sum);
+        System.out.println("---------------------------------");
     }
 
     @Test
-    void shoudReturnAllAverage() {
+    void shoudReturnAllAveragePaychack() {                             // srednia wartosc wyplat
         CashMachine cashMachine = new CashMachine("Jaw");
         cashMachine.addTransaction(400);
+        cashMachine.addTransaction(-200);
         CashMachine cashMachine2 = new CashMachine("Leg");
         cashMachine.addTransaction(-200);
+        cashMachine.addTransaction(100);
         CashMachine[] listMachines = {cashMachine, cashMachine2};
         Bank bank = new Bank(listMachines);
-        double average = bank.allAverage();
+        double average = bank.allAveragePaychack();
 
         // then
 
-        Assertions.assertEquals(300, average);
-        System.out.println("srednia z bankomatow !!!!  " + bank.allAverage());
+        Assertions.assertEquals(-200, average);
+        System.out.println("---------------------------------");
+        System.out.println("average paychack  !!!!  " + average);
+        System.out.println("---------------------------------");
+    }
+    @Test
+    void shoudReturnAllAveragePayment() {                             // srednia wartosc wplat
+        CashMachine cashMachine = new CashMachine("Jaw");
+        cashMachine.addTransaction(1000);
+        cashMachine.addTransaction(-200);
+        CashMachine cashMachine2 = new CashMachine("Leg");
+        cashMachine.addTransaction(-200);
+        cashMachine.addTransaction(100);
+        CashMachine[] listMachines = {cashMachine, cashMachine2};
+        Bank bank = new Bank(listMachines);
+        double average = bank.allAveragePayment();
+
+        // then
+
+        Assertions.assertEquals(550, average);
+        System.out.println("---------------------------------");
+        System.out.println("average payment from cashmachines !!!!  " + average);
+        System.out.println("---------------------------------");
     }
 }
 

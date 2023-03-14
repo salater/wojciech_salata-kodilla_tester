@@ -25,14 +25,17 @@ public class CashMAcineTestSuit {
         assertEquals(7, cashMachineJ.getNumberOfTransations() + cashMachineL.getNumberOfTransations());      // spradza ilosc transakcji
         assertEquals(4, cashMachineJ.getSizePayment() + cashMachineL.getSizePayment());              // sprawdza ilosc wplat
         assertEquals(3, cashMachineJ.getSizePaycheck() + cashMachineL.getSizePayment());             // sprawdza ilosc wyplat
-        assertEquals(500, cashMachineJ.balance() + cashMachineL.balance());                   // sprawdza saldo bankomatow
+        assertEquals(600, cashMachineJ.balance());                   // sprawdza saldo bankomatow
+        assertEquals(-100, cashMachineL.balance());                   // sprawdza saldo bankomatow
         assertEquals(71.0, (cashMachineJ.balance() + cashMachineL.balance()) / (cashMachineJ.getNumberOfTransations() + cashMachineL.getNumberOfTransations()));               // sprawdza srednia transakcji
 
         System.out.println("number of transactions Jawor: " + (cashMachineJ.getNumberOfTransations() + cashMachineL.getNumberOfTransations()));
         System.out.println("number of transactions plus Jawor: " + (cashMachineJ.getSizePayment() + cashMachineL.getSizePayment()));
         System.out.println("number of transactions minus Jawor : " + (cashMachineJ.getSizePaycheck() + cashMachineL.getSizePaycheck()));
-        System.out.println("Balance: " + (cashMachineJ.balance() + cashMachineL.balance()));
-        System.out.println("Average: " + (cashMachineJ.balance() + cashMachineL.balance()) / (cashMachineJ.getNumberOfTransations() + cashMachineL.getNumberOfTransations()));               // sprawdza srednia transakcji
+        System.out.println("Balance Jawor: " + cashMachineJ.balance());
+        System.out.println("Balance Legnica: " + cashMachineL.balance());
+        System.out.println("Average Jawor: " + cashMachineJ.balance() / cashMachineJ.getNumberOfTransations());               // sprawdza srednia transakcji
+        System.out.println("Average Legnica: " + cashMachineL.balance() / cashMachineL.getNumberOfTransations());               // sprawdza srednia transakcji
 
     }
 

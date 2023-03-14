@@ -1,8 +1,8 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-   //private int size;
-    private CashMachine[] listCashMashin;
+    //private int size;
+    private CashMachine[] listCashMashin;  //tablica bankomatow
 
     public Bank(CashMachine[] cashMachines) {
         listCashMashin = cashMachines;
@@ -10,7 +10,7 @@ public class Bank {
 
     }
 
-    public double sumOfCashFromMachines() {                      // całkowit wartosc wpłat
+    public double sumOfCashFromMachines() {                      // całkowite saldo z bankomatow
         int numberOfMAchine = listCashMashin.length;
         int sum = 0;
         for (int i = 0; i < numberOfMAchine; i++) {
@@ -19,30 +19,58 @@ public class Bank {
             sum += balance;
         }
         return sum;
-
     }
 
-    public double allAverage() {                            // średnia wartość transakcji
+    public int sumAllTransPayment() {                           // ilosc wszytskich wpłat
+        int numberOfMAchine = listCashMashin.length;
+        int sum = 0;
+        for (int i = 0; i < numberOfMAchine; i++) {
+            CashMachine cashMachines = listCashMashin[i];
+        int numberPayment = cashMachines.getSizePayment();
+        sum += numberPayment;
+    }
+        return sum;
+    }
+
+    public int sumAllTransPaychack() {                           // ilosc wszytskich wypłat
+        int numberOfMAchine = listCashMashin.length;
+        int sum = 0;
+        for (int i = 0; i < numberOfMAchine; i++) {
+            CashMachine cashMachines = listCashMashin[i];
+            int numberPaychack = cashMachines.getSizePaycheck();
+            sum += numberPaychack;
+        }
+        return sum;
+    }
+
+    public double allAveragePaychack() {                // średnia wartość wyplat transakcji ze wszystkich
+        int length = listCashMashin.length;
+        double sum = 0;
+        for (int i = 0; i < length; i++) {
+            CashMachine cashMachines = listCashMashin[i];
+            double sumPaychack = cashMachines.getBalancePaychack();
+            sum += sumPaychack;
+        }
+        return sum/sumAllTransPaychack();
+    }
+
+    public double allAveragePayment() {              // średnia wartość wplat transakcji ze wszystkich
 
         int length = listCashMashin.length;
-        double howAverageAll = 0;
+        double sum= 0;
         for (int i = 0; i < length; i++) {
-            CashMachine averageAll = new CashMachine("all");
-            double howAverage = averageAll.HowAverage();
-            howAverageAll = +howAverage;
+            CashMachine cashMachines = listCashMashin[i];
+            double sumPayment = cashMachines.getBalancePayment();
+            sum += sumPayment;
         }
-        return howAverageAll / listCashMashin.length;
+        return sum / sumAllTransPayment();
     }
+}
 
-    public int allNumberTransations() {
-        CashMachine cashMachineall = new CashMachine("All");
-        int allTransaction = cashMachineall.getNumberOfTransations();
-        return allTransaction;
-    }
 
-        //CashMachine cashMAchineQuantiti = new CashMachine("Quantitit");
-       // int allQuantiti = cashMAchineQuantiti.getNumberOfTransations();
-       // return allQuantiti;
+//CashMachine cashMAchineQuantiti = new CashMachine("Quantitit");
+// int allQuantiti = cashMAchineQuantiti.getNumberOfTransations();
+// return allQuantiti;
 
 
         /*
@@ -56,6 +84,6 @@ public class Bank {
         return allTransations;
     }  */
 
-    }
+
 
 

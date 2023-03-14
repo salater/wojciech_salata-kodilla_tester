@@ -61,7 +61,7 @@ public class CashMachine {
         return numberOfTransations;
     }
 
-    public double HowAverage(){             //średnia kwot transakcji
+    public double HowAverage(){             //średnia kwota transakcji
         average = balance() / getNumberOfTransations();
         return average;
     }
@@ -74,7 +74,13 @@ public class CashMachine {
     public int getSizePaycheck() {          // ilość wypłat bankomatu
 
         return sizePaycheck;
-
     }
+public int getBalancePaychack() {
+    balanceCach = IntStream.of(transactionsPaycheck).sum();
+    return balanceCach;
+}
 
+    public int getBalancePayment() {
+        return IntStream.of(transactionsPayment).sum();
+    }
 }
