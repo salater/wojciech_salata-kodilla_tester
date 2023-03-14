@@ -10,7 +10,7 @@ public class CarUtils {
 
     public static void displayCar(Car car) {
 
-        System.out.println("Model of Car: " + getModelCar(car) + "speed: " + car.getSpeed());
+        System.out.println("Model of Car: " + getModelCar(car) + ", speed: " + getIncreaseSpeed(car));
     }
 
     public static String getModelCar(Car car) {
@@ -23,20 +23,13 @@ public class CarUtils {
         else
             return "Unknown Car name";
     }
-    public static void getInfoCar() {
-        Car autospeed = new Car() {
-            @Override
-            public int getSpeed() {
-                return 0;
-            }
-            @Override
-            public void increaseSpeed() {
-            }
-            @Override
-            public void decreaseSpeed() {
-            }
+
+    public static int getIncreaseSpeed(Car car) {
+       car.increaseSpeed();
+        return car.getSpeed();
+
         }
-    }
+
 }
 
 

@@ -18,11 +18,11 @@ public class CarsApplication {
         int whatCar = random.nextInt(3);
         //double a = getRandomSize();
         if (whatCar == 0)
-            return new Ford(random.nextInt(), 3, 5);
+            return new Ford(random.nextInt(300), 3, 5);
         else if (whatCar == 1)
-            return new Kia(200, 2, 4);
+            return new Kia(random.nextInt(200), 2, 4);
         else {
-            return new Opel(150, 1, 3);
+            return new Opel(random.nextInt(250), 1, 3);
         }
     }
 
