@@ -1,12 +1,10 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    //private int size;
-    private CashMachine[] listCashMashin;  //tablica bankomatow
+    private CashMachine[] listCashMashin;                           //tablica bankomatow
 
     public Bank(CashMachine[] cashMachines) {
         listCashMashin = cashMachines;
-        CashMachine[] averageOfAll = cashMachines;
 
     }
 
@@ -26,10 +24,12 @@ public class Bank {
         int sum = 0;
         for (int i = 0; i < numberOfMAchine; i++) {
             CashMachine cashMachines = listCashMashin[i];
-        int numberPayment = cashMachines.getSizePayment();
-        sum += numberPayment;
-    }
+            int numberPayment = cashMachines.getSizePayment();
+            sum += numberPayment;
+        }
+
         return sum;
+
     }
 
     public int sumAllTransPaychack() {                           // ilosc wszytskich wypłat
@@ -51,13 +51,13 @@ public class Bank {
             double sumPaychack = cashMachines.getBalancePaychack();
             sum += sumPaychack;
         }
-        return sum/sumAllTransPaychack();
+        return sum / sumAllTransPaychack();
     }
 
     public double allAveragePayment() {              // średnia wartość wplat transakcji ze wszystkich
 
         int length = listCashMashin.length;
-        double sum= 0;
+        double sum = 0;
         for (int i = 0; i < length; i++) {
             CashMachine cashMachines = listCashMashin[i];
             double sumPayment = cashMachines.getBalancePayment();
@@ -68,21 +68,6 @@ public class Bank {
 }
 
 
-//CashMachine cashMAchineQuantiti = new CashMachine("Quantitit");
-// int allQuantiti = cashMAchineQuantiti.getNumberOfTransations();
-// return allQuantiti;
-
-
-        /*
-        int length = listCashMashin.length;
-        int allTransations = 0;
-        for (int i = 0; i < length; i++) {
-            CashMachine cashMachineTransations = listCashMashin[i];
-           int sumTransations = cashMachineTransations.getNumberOfTransations();
-           allTransations =+ sumTransations;
-        }
-        return allTransations;
-    }  */
 
 
 

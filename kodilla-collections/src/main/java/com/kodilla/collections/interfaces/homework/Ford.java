@@ -1,5 +1,6 @@
 package com.kodilla.collections.interfaces.homework;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Ford implements Car{
@@ -27,5 +28,27 @@ public class Ford implements Car{
 
     public int getSpeed(){
         return speed;
+    }
+
+    @Override
+    public String toString() {
+        return "Ford{" +
+                "maxspeed=" + maxspeed +
+                ", engine=" + engine +
+                ", numberOfDoors=" + numberOfDoors +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ford ford = (Ford) o;
+        return maxspeed == ford.maxspeed && engine == ford.engine && numberOfDoors == ford.numberOfDoors;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maxspeed, engine, numberOfDoors);
     }
 }

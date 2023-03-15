@@ -20,6 +20,7 @@ public class CashMachine {
         this.transactionsPaycheck = new int[0];
 
     }
+
     public void addTransaction(int cash) {  // dodadanie wplaty/wyplaty z bankomatu
         if (cash == 0) {
             return;
@@ -54,14 +55,15 @@ public class CashMachine {
 
     public int balance() {                  //  saldo bankomatu
         balanceCach = IntStream.of(transactionsPaycheck).sum() + IntStream.of(transactionsPayment).sum();
-            return balanceCach;
+        return balanceCach;
     }
+
     public int getNumberOfTransations() {   // ilość transakcji
 
         return numberOfTransations;
     }
 
-    public double HowAverage(){             //średnia kwota transakcji
+    public double HowAverage() {             //średnia kwota transakcji
         average = balance() / getNumberOfTransations();
         return average;
     }
@@ -71,14 +73,16 @@ public class CashMachine {
 
         return sizePayment;
     }
+
     public int getSizePaycheck() {          // ilość wypłat bankomatu
 
         return sizePaycheck;
     }
-public int getBalancePaychack() {
-    balanceCach = IntStream.of(transactionsPaycheck).sum();
-    return balanceCach;
-}
+
+    public int getBalancePaychack() {
+        balanceCach = IntStream.of(transactionsPaycheck).sum();
+        return balanceCach;
+    }
 
     public int getBalancePayment() {
         return IntStream.of(transactionsPayment).sum();

@@ -29,6 +29,15 @@ Random random = new Random();
     public int getSpeed(){
         return speed;
     }
+
+    @Override
+    public String toString() {
+        return "Kia{" +
+                "maxspeed=" + maxspeed +
+                ", engine=" + engine +
+                ", numberOfDoors=" + numberOfDoors +
+                '}';
+    }
 }
 
 

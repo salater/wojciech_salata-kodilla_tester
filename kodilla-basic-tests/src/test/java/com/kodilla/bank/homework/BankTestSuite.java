@@ -84,6 +84,7 @@ public class BankTestSuite {
         System.out.println("average paychack  !!!!  " + average);
         System.out.println("---------------------------------");
     }
+
     @Test
     void shoudReturnAllAveragePayment() {                             // srednia wartosc wplat
         CashMachine cashMachine = new CashMachine("Jaw");
