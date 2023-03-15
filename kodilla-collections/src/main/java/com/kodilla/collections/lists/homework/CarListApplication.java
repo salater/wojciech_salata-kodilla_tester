@@ -23,10 +23,8 @@ public class CarListApplication {
         cars.remove(car);                                              //wywali auto Ford o wlasciwosciach 234,2,4
         System.out.println("How many cars ?: " + cars.size());
         for (Car carss : cars) {
-            CarUtils carUtils = new CarUtils();
-            System.out.println("Auto: " + carss);
-
+            CarUtils.displayCar(carss);
+            System.out.println(carss);
         }
-
     }
 }
