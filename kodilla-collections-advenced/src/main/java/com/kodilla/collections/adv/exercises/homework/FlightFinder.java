@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class FlightFinder {
 
-        Map<String, List<Flight>> find = new HashMap<>();
+       Map<String, List<Flight>> find = new HashMap<>();
 
         public List<Flight> findFlightsFrom (String departure){
             return find.getOrDefault(departure, Collections.emptyList());
