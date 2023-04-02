@@ -6,15 +6,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ShapesListApplication {
+
+
+
     public static void main(String[] args) {
+
         List<Square> shapes = new ArrayList<>();
         shapes.add(new Square(10.0));
         shapes.add(new Square(5.0));
         shapes.add(new Square(1.0));
-                                                             // for (int n = 0; n < shapes.size(); n++) {
+
+                                                            // for (int n = 0; n < shapes.size(); n++) {
         for (Square square : shapes) {                       //   Square square = shapes.get(n);
             if (square.getArea() > 1.0)                       //if (square.getArea() > 20)
                 System.out.println(square + ", area " + square.getArea());
         }
     }
+
+
 }
