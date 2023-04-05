@@ -21,12 +21,8 @@ public class GamblingMachineTestSuite {
     public void testGenerataComputerNumbers(int generates) {
         for(int i = 0;  i < generates; i ++) {
             Set<Integer> numbers = gamblingMachine.generateComputerNumbers();
-            assertEquals(6, numbers.size(), "Wrong");
+            assertEquals(6, numbers.size(), "Error");
         }
     }
-
-   // @ParameterizedTest
-   // @CsvFileSource(resources = "/homeGambling.csv", numLinesToSkip = 1)
-   // public void test
 
 }
