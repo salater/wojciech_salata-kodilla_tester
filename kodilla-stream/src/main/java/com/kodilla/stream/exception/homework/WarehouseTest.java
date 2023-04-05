@@ -2,6 +2,8 @@ package com.kodilla.stream.exception.homework;
 
 import org.testng.annotations.Test;
 
+import static org.testng.Assert.assertThrows;
+
 public class WarehouseTest {
 
     @Test
@@ -10,9 +12,9 @@ public class WarehouseTest {
             //given
             Warehouse warehouse = new Warehouse();
             //when
-            warehouse.addOrder(new Order("0201"));
+           // warehouse.addOrder(new Order("0201"));
             //then
-        // dlaczego nie mogę zrobić asserEquals ?
+        assertThrows(OrderDoesntExistException.class, () -> warehouse.getOrder("0201"));
         }
     }
 
