@@ -1,8 +1,12 @@
 package com.kodilla.parametrized_test;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -15,9 +19,19 @@ public class StringManipulatorTestSuite {
     public void shouldReverseStringWithLowerCase(String input, String expected) {
         assertEquals(expected, manipulator.reverseWithLowerCase(input));
     }
-
+    private static Stream<Arguments> shouldCalculateStringLengthWithoutSpaces() {
+        return Stream.of(
+                Arguments.of("test", 4),
+                Arguments.of("OtHEr ", 5),
+                Arguments.of("E V e n t", 5),
+                Arguments.of("null ", 4),
+                Arguments.of("A", 1)
+        );
+    }
     @ParameterizedTest
-            @CsvSource(value = {"test,4", " OtHEr ,5", "E V e n t,5", "null ,4", "A,1"})
+    @MethodSource//(value = "provideStringsForTestingLength")
+    //  @CsvSource(value = {"test,4", " OtHEr ,5", "E V e n t,5", "null ,4", "A,1"})
+   // public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
     public void shouldCalculateStringLengthWithoutSpaces(String input, int expected) {
         assertEquals(expected, manipulator.getStringLengthWithoutSpaces(input));
     }
