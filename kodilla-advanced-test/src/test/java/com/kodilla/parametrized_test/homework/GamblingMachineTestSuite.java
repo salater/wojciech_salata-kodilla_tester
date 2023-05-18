@@ -14,6 +14,7 @@ public class GamblingMachineTestSuite {
     @CsvFileSource(resources = "/homeGambling.csv", numLinesToSkip = 1)
     public void testHowManyWins(Set<Integer> userNumbers, int expected) throws InvalidNumbersException {
         int now = gamblingMachine.howManyWins(userNumbers);
+        assertEquals(expected, now);
     }
 
     @ParameterizedTest
