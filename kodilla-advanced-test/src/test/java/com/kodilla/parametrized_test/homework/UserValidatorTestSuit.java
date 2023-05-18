@@ -1,6 +1,7 @@
 package com.kodilla.parametrized_test.homework;
 
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.HashMap;
@@ -28,10 +29,10 @@ public class UserValidatorTestSuit {
     }
 
     @ParameterizedTest
-//    @CsvSource({"mgrsalater@gmail.com", true,
-//            "234567Q@onet.pl", true,
-//            "Q....Q@o2.pl", true,
- //           "zenon23_9%gmail.com", false})
+    @CsvSource({"mgrsalater@gmail.com, true",
+            "234567Q@onet.pl, true",
+            "Q_____Q@o2.pl, true",
+            "zenon23_9%gmail.com, false"})
     public void testvalidateEmail(String email, boolean expected) {
         boolean result = validator.validateEmail(email);
         assertEquals(expected, result);

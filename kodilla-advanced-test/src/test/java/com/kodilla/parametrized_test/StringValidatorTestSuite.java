@@ -31,6 +31,7 @@ public class StringValidatorTestSuite {
     @NullSource
     public void shouldReturnTrueIfStringIsNull(String text) {
         assertTrue(validator.isBlank(text));
+        System.out.println("|" + text + "|");
     }
 /*    @Test
     public void shouldReturnTrueIfStringIsNull() {
@@ -43,12 +44,13 @@ public class StringValidatorTestSuite {
     @EmptySource
     public void shouldReturnTrueIfStringIsEmpty(String text) { // puste dane wejsciowe
         assertTrue(validator.isBlank(text));
+        System.out.println("|" + text + "|");
     }
 @ParameterizedTest
     @NullAndEmptySource
     public void shouldReturnTrueIfStringIsEmptyAndNull(String text) {
-    System.out.println("|" + text + "|"); // wyswietala jakie sa dane wejsciowe null czy spacje lub bez
     assertTrue(validator.isBlank(text));
+    System.out.println("|" + text + "|"); // wyswietala jakie sa dane wejsciowe null czy spacje lub bez
 }
 
 
